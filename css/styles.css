@@ -1,13 +1,35 @@
 body {
-  margin: 100px;
-  background-color: gray;
+  background: url('https://media.istockphoto.com/id/1221832287/vector/birthday-seamless-icon-background.jpg?s=612x612&w=0&k=20&c=SfiQ75iff0k4YxLKGbCn_iKdzaKA4puh5ldCLyWFMc8=')
 }
 
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .element {
-  background-color: rgb(59, 59, 59);
-  width: 200px;
-  height: 100px;
+  background-color: rgba(0, 0, 0, 0.781);
+  border-radius: 50px;
+  width: 50%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.buttn {
+  font-weight: 600;
+  background-color: rgba(255, 217, 0, 0.747);
+  padding: 10px;
+  display: flex;
+  border-radius: 50px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
