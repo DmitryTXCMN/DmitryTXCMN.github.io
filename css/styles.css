@@ -2,11 +2,19 @@ body {
   background: url('https://media.istockphoto.com/id/1221832287/vector/birthday-seamless-icon-background.jpg?s=612x612&w=0&k=20&c=SfiQ75iff0k4YxLKGbCn_iKdzaKA4puh5ldCLyWFMc8=')
 }
 
+.title {
+  font-size: 150%;
+}
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+.main {
+  font-size: 120%;
 }
 
 .element {
@@ -27,10 +35,9 @@ body {
 }
 
 .buttn {
-  font-size: x-large;
-  font-weight: 600;
+  font-size: 326%;
   background-color: rgba(255, 217, 0, 0.747);
-  padding: 10px;
+  padding: 50px;
   display: flex;
   border-radius: 50px;
   text-decoration: none;
