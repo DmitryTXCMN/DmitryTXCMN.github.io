@@ -1,0 +1,13 @@
+body {
+  margin: 100px;
+  background-color: gray;
+}
+
+.container {
+}
+
+.element {
+  background-color: rgb(59, 59, 59);
+  width: 200px;
+  height: 100px;
+}
