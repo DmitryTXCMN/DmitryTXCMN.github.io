@@ -1,25 +1,109 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BattlePass</title>
+<style>
+  body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #ffd1dc, #fff0f5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  h1 {
+    color: #ff69b4;
+  }
+
+  #contentContainer {
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background: #fff0f5;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+  }
+
+  #contentContainer.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ff69b4;
+    font-size: 1em;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff69b4;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+
+  button:hover {
+    background-color: #ff85c1;
+  }
+</style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="element">
-      <div class="title">
-        <h1>С Днём Рождения!</h1>
-      </div>
-      <div class="main">
-        Ваш подарок: </br><b>Годовой абонемент в спортзал по выбору в г.Казань (12 мес).</b></br></br>
-        Чтобы забрать подарок:</br> отправьте кодовое слово "Абонимент {название зала}" по ссылке ниже.
-      </div>
-      <a href="https://t.me/tox1cman" class="buttn">
-        Забрать подарок!
-      </a>
-    </div>
-    </div>
-  </div>
-</body>
 
+<h1>Введите ключевое слово</h1>
+<form id="keywordForm">
+  <input type="text" id="keywordInput" placeholder="Ключевое слово" required />
+  <button type="submit">Показать задание</button>
+</form>
+
+<div id="contentContainer"></div>
+
+<script>
+  const form = document.getElementById('keywordForm');
+  const input = document.getElementById('keywordInput');
+  const container = document.getElementById('contentContainer');
+
+  // Заготавливаем пример контента
+  const contentMap = {
+    'мёддляушей': 'Прослушать 10 любимых треков песен.',
+    'алкоголизм': 'Выпить бутылку шампанского/вина.',
+    'brandnew': 'Выбрать и купить 3 вещи в магазине одежды.',
+    'mebelka': 'Заберите подарок у вашего мужа.'
+  };
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const key = input.value.toLowerCase().trim();
+
+    // Получаем контент по ключу
+    const contentText = contentMap[key] || 'К сожалению, контент по этому ключу не найден. Попробуйте другое слово!';
+
+    // Обновляем содержимое
+    container.innerHTML = `
+      <p>${contentText}</p>
+      
+    `;
+
+    // Анимация появления
+    container.classList.remove('show');
+    void container.offsetWidth; // сбрасываем анимацию
+    container.classList.add('show');
+  });
+</script>
+
+</body>
 </html>
